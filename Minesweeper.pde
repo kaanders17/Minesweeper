@@ -1,12 +1,12 @@
-/********* VARIABLES *********/
-// We control which screen is active by settings / updating
-// gameScreen variable. We display the correct screen according
-// to the value of this variable.
-// 
-// 0: Initial Screen
-// 1: Game Screen
-// 2: Game-over Screen 
+//Download 3.5
+import de.bezier.guido.*;
+//Declare and initialize constants NUM_ROWS and NUM_COLS = 20
+private int NUM_ROWS = 5;
+private int NUM_COLS = 5;
+private int NUM_Mines = 1;
 int gameScreen = 0;
+private MSButton[][] buttons; //2d array of minesweeper buttons
+private ArrayList <MSButton> mines =  new ArrayList<MSButton>();//ArrayList of just the minesweeper buttons that are mined
 
 
 
@@ -163,15 +163,7 @@ void restart() {
 
 
 
-//Download 3.5
-import de.bezier.guido.*;
-//Declare and initialize constants NUM_ROWS and NUM_COLS = 20
-private int NUM_ROWS = 5;
-private int NUM_COLS = 5;
-private int NUM_Mines = 1;
 
-private MSButton[][] buttons; //2d array of minesweeper buttons
-private ArrayList <MSButton> mines =  new ArrayList<MSButton>();//ArrayList of just the minesweeper buttons that are mined
 
 
 public void setMines()
