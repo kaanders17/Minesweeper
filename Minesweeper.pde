@@ -23,7 +23,7 @@ if (gameScreen == 0) {
     initScreen();
     keyPressed();
   } else if (gameScreen == 1) { 
-    gameScreen();
+    //gameScreen();
     if(isWon() == true){
       //System.out.println("Won");
       gameWon();
@@ -76,12 +76,7 @@ text("Click Key to Access Levels", width/2, height-70);
 text("E - Easy, M - Medium, H - Hard", width/2, height-50);
 text("Click to start", width/2, height-30);
 }
-void gameScreen() {
-background(236, 240, 241);
-textSize(70);
-text("Game", width/2, height/2);
 
-}
 void gameLostScreen() {
 background(44, 62, 80);
 textAlign(CENTER);
