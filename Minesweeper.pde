@@ -30,10 +30,10 @@ if (gameScreen == 0) {
     }
   } else if (gameScreen == 2) { 
     gameLostScreen();
-    System.out.println("Lose");
+    //System.out.println("Lose");
   } else if (gameScreen == 3) { 
     gameWonScreen();
-    System.out.println("Win");
+    //System.out.println("Win");
   }
   
 }
@@ -44,7 +44,7 @@ public void keyPressed(){
     NUM_ROWS = 15;
     NUM_COLS = 15;
     NUM_Mines = 8;
-    System.out.println("Hard");
+    //System.out.println("Hard");
     textSize(3);
     startGame();
   }
@@ -52,14 +52,14 @@ public void keyPressed(){
     NUM_ROWS = 5;
     NUM_COLS = 5;
     NUM_Mines = 1;
-    System.out.println("Easy");
+    //System.out.println("Easy");
     startGame();
   }
   if(key == 'm'){
     NUM_ROWS = 10;
     NUM_COLS = 10;
     NUM_Mines = 5;
-    System.out.println("Medium");
+    //System.out.println("Medium");
     textSize(10);
     startGame();
   }
