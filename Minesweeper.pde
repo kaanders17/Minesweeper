@@ -43,22 +43,22 @@ public void keyPressed(){
   if(key == 'h'){
     NUM_ROWS = 15;
     NUM_COLS = 15;
-    NUM_Mines = 8;
+    NUM_Mines = 30;
     //System.out.println("Hard");
-    textSize(3);
+    textSize(10);
     startGame();
   }
   if(key == 'e'){
     NUM_ROWS = 5;
     NUM_COLS = 5;
-    NUM_Mines = 1;
+    NUM_Mines = 2;
     //System.out.println("Easy");
     startGame();
   }
   if(key == 'm'){
     NUM_ROWS = 10;
     NUM_COLS = 10;
-    NUM_Mines = 5;
+    NUM_Mines = 8;
     //System.out.println("Medium");
     textSize(10);
     startGame();
@@ -123,7 +123,7 @@ if (gameScreen==3) {
 void startGame() {
   gameScreen=1;
     textAlign(CENTER,CENTER);
-    textSize(5);
+    textSize(10);
     
     // make the manager
     Interactive.make(this);
@@ -178,6 +178,11 @@ public boolean isWon()
       if(!mines.contains(buttons[i][j]) && buttons[i][j].clicked == false){
         won = false;
       }
+    }
+  }
+  for(int k = 0; k < mines.size(); k++){
+    if(!mines.get(k).isFlagged()){
+      won = false;
     }
   }
     //your code here
@@ -263,7 +268,13 @@ public class MSButton
           myLabel = "" + countMines(myRow, myCol);
         }
         else{
-          this.mousePressed();
+          for(int i = myRow -1; i <= myRow + 1; i++){
+            for(int j = myCol - 1; j <= myCol + 1; j++){
+              if(isValid(i,j) && !buttons[i][j].isClicked()){
+                buttons[i][j].mousePressed();
+              }
+            }
+          }
         }
         //your code here
     }
@@ -298,5 +309,11 @@ public class MSButton
     public boolean isFlagged()
     {
         return flagged;
+    }
+    public boolean isClicked(){
+      if(clicked){
+        return true;
+      }
+      return false;
     }
 }
